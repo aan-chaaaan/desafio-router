@@ -24,7 +24,7 @@ export default new Router({
       component: UltimoPost,
       children: [
         {
-          path: "/post/1",
+          path: "/post/",
           component: Articulo,
           name: "Articulo",
         },
