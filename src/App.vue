@@ -28,12 +28,20 @@
             <li class="nav-item" role="presentation">
               <router-link to="/post/1">ultimo post</router-link>
             </li>
+            <li class="nav-item" role="presentation">
+              <router-link to="/Simple">Administrador simple</router-link>
+            </li>
+            <li class="nav-item" role="presentation">
+              <router-link to="/Avanzado">Administrador avanzado</router-link>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- ROUTER VIEW QUE CARGARÁ LAS VISTAS (INICIO, SOBRE MÍ, CONTACTO, ETC.) -->
-    <router-view />
+    <transition name="transicion">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -52,5 +60,19 @@ export default {};
 }
 #menu-v8 a {
   text-shadow: 1px 1px #000;
+}
+.transicion-enter-active,
+.transicion-leave-active {
+  transition: opacity 0.5s, padding 1s;
+}
+.transicion-enter,
+.transicion-leave-to {
+  opacity: 0;
+  padding: 10px;
+}
+.transicion-enter-to,
+.transicion-leave {
+  opacity: 0.9;
+  padding: 0px;
 }
 </style>
